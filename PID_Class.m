@@ -17,7 +17,7 @@ classdef PID_Class
         function output = calcControl(PID,setPoint,currentState)
             PID.mCurrentE = setPoint - currentState;
             Pout = PID.mCurrentE * PID.mKp;
-            Dout = (PID.mCurrentE-PID.mPrevE)/PID.mdt;
+            Dout = ((PID.mCurrentE-PID.mPrevE)/PID.mdt)*PID.mKd;
             PID.mPrevE=PID.mCurrentE;
             
             
