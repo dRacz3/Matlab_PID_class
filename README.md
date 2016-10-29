@@ -5,4 +5,4 @@
     PID = PID_Class(Kp,Kd,Ki,timeStep);
     output = PID.calcControl(setPoint,currentState);
 
-Test file included, see that for more details.
+Example file included, see that for more details.
