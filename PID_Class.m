@@ -18,6 +18,9 @@ classdef PID_Class
             PID.mCurrentE = setPoint - currentState;
             Pout = PID.mCurrentE * PID.mKp;
             Dout = (PID.mCurrentE-PID.mPrevE)/PID.mdt;
+            PID.mPrevE=PID.mCurrentE;
+            
+            
             integral = PID.mCurrentE * PID.mdt;
             PID.mIntegral = PID.mIntegral+ integral;
             Iout = PID.mIntegral* PID.mKi;
